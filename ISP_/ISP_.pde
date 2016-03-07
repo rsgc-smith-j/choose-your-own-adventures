@@ -1,14 +1,16 @@
-  void setup() {
-    size(800, 800);  
-  }
-  
-  void draw() {
-    // clear screen, grey background
-    background(0);
-    
-    noStroke();
-    // draw ellipse that follows the mouse
-    fill(random(255), random(255), random(255));
-    ellipse(mouseX, mouseY, 100, 100);
-    
-  }
+int tileSize = 40;
+int column = 0;
+
+void setup(){
+size(400,400);
+frameRate(1);
+}
+
+void draw(){
+rect(column * tileSize, 0, tileSize, tileSize);
+column = column + 1;
+println("column is:" + column);
+if (column ==10) {
+  column=0;
+}
+}
